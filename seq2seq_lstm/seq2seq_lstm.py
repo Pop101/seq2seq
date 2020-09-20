@@ -359,7 +359,7 @@ class Seq2SeqLSTM(BaseEstimator, ClassifierMixin):
         check_is_fitted(self, ['input_token_index_', 'target_token_index_', 'reverse_target_char_index_',
                                'max_encoder_seq_length_', 'max_decoder_seq_length_',
                                'encoder_model_', 'decoder_model_'])
-        tmp_weights_name = self.get_temp_name()
+        tmp_weights_name = self.get_temp_name()+'.hdf5'
         try:
             if os.path.isfile(tmp_weights_name):
                 os.remove(tmp_weights_name)
